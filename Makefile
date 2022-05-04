@@ -9,7 +9,7 @@ ifeq ($(shell echo "check_quotes"),"check_quotes")
    WINDOWS := yes
    PYTHON = $(VENV)/Scripts/python
    PIP = $(VENV)/Scripts/pip
-   VENV_ACTIVATE = . $(VENV)/Scripts/activate
+   VENV_ACTIVATE = $(VENV)\Scripts\activate
 else
    WINDOWS := no
    PYTHON = $(VENV)/bin/python
@@ -26,7 +26,7 @@ define create-venv
 python -m venv $(VENV)
 endef
 
-run: venv
+run: venv_prep
 	$(PYTHON) $(DIR)/app.py
 
 read_sql: run
@@ -36,7 +36,7 @@ run_test: venv
 	$(PYTHON) -m pytest $(DIR)/get_holidays_test.py
 	@echo "test completed"
 
-venv: requirements.txt
+venv_prep: requirements.txt
 	@$(create-venv)
 	@$(VENV_ACTIVATE)
 	@$(PIP) install -r requirements.txt
