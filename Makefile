@@ -2,7 +2,7 @@ VENV = venv
 DIR = assignment
 IMAGE = py_app
 CONTAINER = py_run
-CMD = python -m pytest assignment/get_holidays_test.py
+CMD = python assignment/app.py
 
 
 ifeq ($(shell echo "check_quotes"),"check_quotes")
