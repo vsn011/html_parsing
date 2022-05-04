@@ -27,7 +27,8 @@ The goal of this task was to create a unit test for our parsing functions. The c
 The goal of this task was to store retrieved data into an SQLite DB. For that purpose, we created db_conn.py where we with help of SQLalchemy create a connection for our Sqlite DB. 
 
 
-# INSTRUCTIONS
+
+# Instructions
 
 
 1. In the project directory run "make run". This command will first check if venv task (creation of virtualenv and installation of dependencies) has been satisfied and will then run the app. If not, it will automatically run "venv_prep" task and prepare the working environment. 
