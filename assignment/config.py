@@ -14,5 +14,4 @@ table_name = 'holidays'
 #test parameters
 holidays_test_list = ["New Year's Day", 'Labour Day', 'Australia Day', 'Easter Sunday', 'Good Friday',  'Easter Monday', 'Anzac Day', 'Western Australia Day', "Queen's Birthday #", 'Christmas Day', 'Boxing Day']
 years_test_list = ['2024', '2023', '2022']
-no_of_records = 33  #we have 11 Holidays and 3 records for each of them, in total we expect to get 33 rows 
 page_title = 'Public holidays in Western Australia | Department of Mines, Industry Regulation and Safety'

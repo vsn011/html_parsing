@@ -12,6 +12,9 @@ final_list = fl.get_final_table()
 pprint(final_list)
 
 
+#storing page title into a file for testing purpose
+fl.get_page_title()
+
 # writing data to SQLite with help of Pandas DF
 df = pd.DataFrame(final_list, columns=columns)
 with db_conn.begin() as conn:

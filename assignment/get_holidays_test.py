@@ -1,40 +1,38 @@
 """An example of a test module in pytest."""
 
-from get_holidays import GetPublicHolidays
-from config import url, columns, table_name, holidays_test_list, years_test_list, no_of_records, page_title
+from config import table_name, holidays_test_list, years_test_list, page_title
 from typing import List
 from db_conn import db_conn
 import pandas as pd
 
 
-
-
-fl = GetPublicHolidays(url)
-
 def test_page_title() -> str:
-    title = fl.get_page_title()
+    with open("output/title.txt", "r") as f:
+        title = f.read()
+    
     assert title == page_title
 
 
 def test_holidays() -> list:
-    list_of_holidays = fl.get_table_data()[1]
+    with db_conn.begin() as conn:
+        df_h = pd.read_sql('select distinct Holiday from {} order by Holiday, Year asc'.format(table_name), conn)
+    list_of_holidays = df_h['Holiday'].values.tolist()
     assert holidays_test_list.sort() == list_of_holidays.sort()
 
 
 def test_years() -> list:
-    list_of_years = fl.get_table_data()[1]
+    with db_conn.begin() as conn:
+        df_y = pd.read_sql('select distinct Year from {} order by Holiday, Year asc'.format(table_name), conn)
+    list_of_years = df_y['Year'].values.tolist()
     assert years_test_list.sort() == list_of_years.sort()
-
-
-def test_number_of_records() -> int:
-    final_list = fl.get_final_table()
-    assert no_of_records == len(final_list)
 
 
 def test_sql() -> int:
     with db_conn.begin() as conn:
         df = pd.read_sql('select count(*) from {}'.format(table_name), conn, columns=[['count']])
         number = int(df.iloc[0,0])
+    no_of_records = len(holidays_test_list) * len(years_test_list)
+    
     assert no_of_records == number
 
 
