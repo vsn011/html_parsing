@@ -36,7 +36,7 @@ The goal of this task was to store retrieved data into an SQLite DB. For that pu
 
 3. In order to perform the unit test, use the "make run_test" command. 
 
-4. In order to build and run a docker image, you can use the "make docker" command. It will first run the docker build command, and then the docker run with "python assignment/app.py" as the default cmd. If you wish to run some other command, you can do it by typing "make cmd=<> docker". Type python assignment/sql_read.py to read data from SQLite or python -m pytest assignment/get_holiday_test.py to run the unit test. 
+4. In order to build and run a docker image, you can use the "make docker" command. It will first run the docker build command, and then the docker run with "python assignment/app.py" as the default cmd. If you wish to run some other command, you can do it by changing CMD variable in Makefile (python assignment/sql_read.py to read data from SQLite or python -m pytest assignment/get_holiday_test.py to run the unit test). 
 
 
 
