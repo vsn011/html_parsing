@@ -5,7 +5,7 @@ This README contains information about the Python exam.
 
 ## Task 1: Create and initialize a Python project 
 
-The goal of this task was to automate the process of setting up the working environment through the creation of a virtual environment and the installation of dependencies. For this purpose, we created a Makefile that first checks if the OS is Windows or a Unix-like system and then creates a virtual environment and installs dependencies. The script was tested only on  Windows and should be also tested on Linux/Mac. After the environment has been set up, we are able to run different commands and use our application. 
+The goal of this task was to automate the process of setting up the working environment through the creation of a virtual environment and the installation of dependencies. For this purpose, we created a Makefile that first checks if the OS is Windows or a Unix-like system and then creates a virtual environment and installs dependencies. After the environment is set up, we are able to run different commands and use our application. 
 
 
 ## Task 2: Detect & parse Holidays
@@ -30,7 +30,7 @@ The goal of this task was to store retrieved data into an SQLite DB. For that pu
 # INSTRUCTIONS
 
 
-1. In the project directory run "make run". This command will first check if venv task (creation of virtualenv and installation of dependencies) has been satisfied and will then run the app. If not, it will automatically run "venv" task and prepare the working environment. 
+1. In the project directory run "make run". This command will first check if venv task (creation of virtualenv and installation of dependencies) has been satisfied and will then run the app. If not, it will automatically run "venv_prep" task and prepare the working environment. 
 
 2. If you want to read the data from th#e database, use "make read_sql". In order to avoid running SQL against a nonexisting database, this action will trigger "make run" to make sure that there is data in the database. 
 
@@ -41,8 +41,5 @@ The goal of this task was to store retrieved data into an SQLite DB. For that pu
 
 
 
-# Future suggestions
-
-The Makefile should be tested on Linux/OS and modified if needed. 
 
 
