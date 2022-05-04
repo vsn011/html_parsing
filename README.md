@@ -22,7 +22,7 @@ The goal of this task was to create a unit test for our parsing functions. The c
 3. the Third test does the same thing but for the years. We know that currently, the given URL contains data for 2022, 2023, and 2024 and those are the years that we expect to see in our database. 
 4. The last test is aimed at checking if we returned the expected number of rows(records). As we know that on the given URL we have 11 different holidays, and for each one of them we know that we are supposed to get 3 different records, which gives us a total of 33 rows. We simply verify that number against the number of records (select count (*) from Holidays) stored in our database. 
 
-Task 4: Save the parsed result into sqlite3 in-memory database
+## Task 4: Save the parsed result into sqlite3 in-memory database
 
 The goal of this task was to store retrieved data into an SQLite DB. For that purpose, we created db_conn.py where we with help of SQLalchemy create a connection for our Sqlite DB. 
 
